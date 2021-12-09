@@ -1,0 +1,13 @@
+.operator-area {
+  display: flex;
+  width: 80%;
+  justify-content:space-evenly
+}
+
+.operator-action {
+  border: 1px solid #ccc;
+  padding: 2px;
+  border-radius: 8px;
+  background-color: rgba(227, 255, 251, 0.85);
+  cursor: pointer;
+}

@@ -1,0 +1,6 @@
+.settings {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  color: azure;
+}
