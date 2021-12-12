@@ -1,6 +1,5 @@
 const THEMES_MODULES = import.meta.glob('/src/themes/*.css');
 let THEMES: string[] = []
-console.log('123', THEMES_MODULES);
 Object.keys(THEMES_MODULES).forEach(path => {
   const theme = THEMES_MODULES[path];
   const themeName = path.split('/')[3].split('.')[0];

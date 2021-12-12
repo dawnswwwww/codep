@@ -18,29 +18,18 @@ export default function Code(props: {
 
   let codeMirror: any;
 
-  const {setMode, setValue, init} = useCodeMirror()
+  const { init } = useCodeMirror()
 
 
 
   useEffect(() => {
     if(!ref.current) return
-    init(ref.current, {
+    codeMirror = init(ref.current, {
       value:props.code, 
       mode: props.language, 
       theme: props.theme
     })
   })
-
-  useEffect(() => {
-    // console.log(codeMirror)
-    // codeMirror.setOption('mode', props.language)
-  }, [props.language])
-
-  // return (
-  //   <pre>
-  //     <code className={`language-${props.language}`}>{props.code}</code>
-  //   </pre>
-  // );
 
   return (
     <div className="codep" ref={ref}>

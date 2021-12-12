@@ -13,6 +13,7 @@ code {
 }
 
 .codep-codeArea {
+  box-sizing: border-box;
   width: 100%;
   height: auto;
   display: flex;
@@ -20,7 +21,8 @@ code {
 }
 
 .CodeArea {
-  min-width: 420px;
+  min-width: 300px;
+  max-width: 100vw;
   width: 40vw;
   border-radius: 10px;
   overflow: hidden;

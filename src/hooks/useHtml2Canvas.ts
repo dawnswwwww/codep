@@ -17,7 +17,8 @@ const dataURLToBlob = (dataurl: string): Blob => {
 const getDataURLFromHTML = async (Node: Node): Promise<string> => {
   if (!Node) return ''
   const canvas: HTMLCanvasElement = await html2canvas(Node, {
-    backgroundColor: null
+    backgroundColor: null,
+    useCORS: true,
   });
   return canvas.toDataURL("image/png");
 }

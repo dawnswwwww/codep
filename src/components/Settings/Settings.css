@@ -1,6 +1,16 @@
 .settings {
   width: 60%;
+  max-width: 40%;
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
   color: azure;
+  height: 30px;
+}
+
+.settings-menu-label {
+  flex-shrink: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 10px;
 }

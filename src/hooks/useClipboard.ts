@@ -4,7 +4,7 @@ const copyText = (text: string) => {
   return clipboard.writeText(text)
 }
 
-const copyIamge = (data: Blob) => {
+const copyImage = (data: Blob) => {
   const item = new clipboard.ClipboardItem({
     'image/png': data
   });
@@ -14,5 +14,5 @@ const copyIamge = (data: Blob) => {
 
   export default () => ({
     copyText,
-    copyIamge
+    copyImage
 })

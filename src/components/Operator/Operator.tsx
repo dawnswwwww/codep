@@ -9,7 +9,7 @@ export default function Operator (props: {
 }) {
 
   const { getDataURLFromHTML, getBlobURLFromHTML }  = useHtml2Canvas()
-  const { copyIamge } = useClipboard()
+  const { copyImage } = useClipboard()
 
   const download = async () => {
     const dataurl = await getDataURLFromHTML(props.target.current)
@@ -21,7 +21,7 @@ export default function Operator (props: {
 
   const copy = async () => {
     const blob = await getBlobURLFromHTML(props.target.current)
-    copyIamge(blob)
+    copyImage(blob)
   }
 
   return (

@@ -3,11 +3,9 @@ import 'codemirror/lib/codemirror.css'
 import SUPPORT_LANG from "@/constants/supportLang"
 import THEMES from '@/constants/supportTheme'
 
-console.log(THEMES)
-
 let editor: CodeMirror.Editor
 
-const init = (target: HTMLElement, config: CodeMirror.EditorConfiguration) => {
+const init = (target: HTMLElement, config: CodeMirror.EditorConfiguration): CodeMirror.Editor => {
   editor = CodeMirror(target, {
     tabSize: 2,
     lineNumbers: true,
@@ -15,6 +13,7 @@ const init = (target: HTMLElement, config: CodeMirror.EditorConfiguration) => {
     viewportMargin: Infinity,
     ...config
   });
+  return editor
 }
 
 const setMode = (mode: string) => editor.setOption('mode', mode)
