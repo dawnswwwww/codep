@@ -2,6 +2,8 @@ import html2canvas from "html2canvas";
 
 type Node = HTMLElement | null;
 
+const ratio = 3;
+
 const dataURLToBlob = (dataurl: string): Blob => { 
   const arr = dataurl.split(',');
   const mime = ((arr[0] as any).match(/:(.*?);/)[1]) as any;
@@ -19,6 +21,7 @@ const getDataURLFromHTML = async (Node: Node): Promise<string> => {
   const canvas: HTMLCanvasElement = await html2canvas(Node, {
     backgroundColor: null,
     useCORS: true,
+    scale: ratio
   });
   return canvas.toDataURL("image/png");
 }

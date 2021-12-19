@@ -7,23 +7,11 @@ import Center from './components/Center/Center'
 import Gap from './components/Gap/Gap'
 import Settings from './components/Settings/Settings'
 import defaultCode from './constants/defaultCode'
-import useCodeMirror from './hooks/useCodeMirror'
 
 function App() {
-  const [lang, setLang] = useState('javascript')
+  const [lang] = useState('javascript')
 
-  const [code, setCode] = useState(defaultCode[lang])
-
-  const { setMode } = useCodeMirror()
-
-  useEffect(() => {
-    setCode(defaultCode[lang])
-  }, [lang])
-
-  setTimeout(() => {
-    setMode('clike')
-  }, 5000)
-
+  const [code] = useState(defaultCode[lang])
 
   const codeAreaRef: React.RefObject<any> = React.createRef()
 
