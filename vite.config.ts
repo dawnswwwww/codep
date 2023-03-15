@@ -2,8 +2,13 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 import fs from 'fs'
+import makeCert from 'make-cert';
 
-const host = 'www.dawnswwwww.com'
+const host = 'localhost'
+
+const {key, cert} = makeCert(host)
+
+
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
@@ -33,8 +38,8 @@ export default defineConfig({
     port: 8821,
     host,
     https: {
-      key: fs.readFileSync(`./.cert/key.pem`),
-      cert: fs.readFileSync(`./.cert/cert.pem`),
+      key,
+      cert,
     }
   }
 })
